@@ -165,7 +165,7 @@ export async function createPost(post: INewPost) {
 export async function uploadFile(file: File) {
   try {
     const uploadedFile = await storage.createFile(
-      appwriteConfig.storageId,
+      appwriteConfig.storageID,
       ID.unique(),
       file
     );
@@ -180,7 +180,7 @@ export async function uploadFile(file: File) {
 export function getFilePreview(fileId: string) {
   try {
     const fileUrl = storage.getFilePreview(
-      appwriteConfig.storageId,
+      appwriteConfig.storageID,
       fileId,
       2000,
       2000,
@@ -199,7 +199,7 @@ export function getFilePreview(fileId: string) {
 // ============================== DELETE FILE
 export async function deleteFile(fileId: string) {
   try {
-    await storage.deleteFile(appwriteConfig.storageId, fileId);
+    await storage.deleteFile(appwriteConfig.storageID, fileId);
 
     return { status: "ok" };
   } catch (error) {
